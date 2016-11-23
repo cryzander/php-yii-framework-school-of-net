@@ -1,0 +1,10 @@
+ 1195  php composer.phar create-project --prefer-dist yiisoft/yii2-app-basic php-yii-framework-school-of-net  // Cria a estrutura do Yii com o Composer e dependências
+ 1197  cd php-yii-framework-school-of-net/
+ 1250  php yii serve --port=8888 // Roda um servidor com o yii na porta 8888
+ 1353  php yii migrate/create create_courses_table --fields="id:primaryKey,name:string:notNull,hours:integer:notNull" // cria uma nova migration para ser migrada no banco
+ 1359  php yii migrate/new // mostra as migrations (arquivo php) que ainda não foram inseridas
+ 1360  php yii migrate/history // mostra o histórico de migrações
+ 1361  php yii migrate // cria a estrutura no banco de dados de acordo com as configurações do arquivo m...php
+ 1363  php yii migrate/history
+ 1364  php yii migrate/new
+ 1365  php yii migrate/redo // volta o banco a uma versão anterior - usa uma tabela no próprio banco para fazer isso (migrations)
