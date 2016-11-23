@@ -16,5 +16,12 @@ class TesteController extends \yii\web\Controller
 		'xpto' => $xpto
 	]); // Esse cara aqui passa as variáveis para a view
     }
+	
+	public function actionMaisParametros($id,$name)
+	{
+		echo "$id - $name"; die();
+		// Olhar o arquivo config/web.php na parte de 
+		// URLs amigáveis.
+	}
 
 }

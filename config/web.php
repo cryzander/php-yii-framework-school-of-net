@@ -39,14 +39,26 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
-        /*
+	// Essa é a parte de url Amigáveis
         'urlManager' => [
             'enablePrettyUrl' => true,
+		// Esse parâmetro aqui defin URLs amigáveis ou não
             'showScriptName' => false,
+		// Esse daqui mostra o link (quando se aponta o
+		// mouse) com o /index.php/site/contact (exemplo)
+		// Legal tirar.
             'rules' => [
+		'teste/<id:\d+>' => 'teste/index',
+		// Aceita parâmetros depois do teste/, exemplo
+		// teste/500. Esse id é o id no controller e o \d+
+		// é uma expressão regular que só aceita numeros
+		// e na quantidade passada (+).
+		'teste/<id:\d+>/<name>' => 'teste/mais-parametros'
+		// Aqui ele passa dois parâmetros e chama a action
+		// mais-parâmetros.  (id, name)
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];
