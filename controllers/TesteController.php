@@ -2,19 +2,17 @@
 
 namespace app\controllers;
 
+use app\models\Course;
+
 class TesteController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-	$request = \Yii::$app->request; 
-	// Pega a requisição
-	// Esse \Yii serve pra você pegar muitas informações
-	$xpto = $request->get('xpto'); // Pega o xpto da requisição
-	$id = $request->get('id');
-        return $this->render('index', [
-		'id' => $id,
-		'xpto' => $xpto
-	]); // Esse cara aqui passa as variáveis para a view
+	$courses = Course::find()->all();
+	foreach ($courses as $course){
+		echo "{$course->id} - {$course->name} - {$course->hours} <br>";
+	}
+	die();
     }
 	
 	public function actionMaisParametros($id,$name)
