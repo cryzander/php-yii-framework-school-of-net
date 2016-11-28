@@ -15,6 +15,12 @@ class CourseController extends \yii\web\Controller
 		$model = new Course();
 		$model->attributes = $request->post();
 		// Isso já pega todos os dados do post e colocar no attributes do model
+		// O nome disso é Massive Assignment
+		// Eu poderia colocar assim: 
+		// $data = $request->post();
+		// $model->name = $data['name'];
+		// Desta maneira não precisaria criar aquele metodo rules em models/Course.php
+		// Porém é bem mais lento
 		$model->save();
 		return $this->redirect(['course/index']);
 		// Isso redireciona para a rota principal Index
