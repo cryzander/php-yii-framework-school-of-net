@@ -1,0 +1,11 @@
+Submissão com o Token
+
+O Yii usar o token (parâmetro crsf) para fazer a verificação da submissão.
+Caso não tenha esse dado no formulário de envio de dados ele retornará o erro 400.
+O exemplo de utilização disto esta na view course/create.php.
+
+Permissões do inserção de dados
+
+O Yii precisa que você implemente uma função rules() dentro de Course.php para que seja
+dada uma permissão aos campos que serão inseridos no banco. Sem isso ele não deixa inserir
+a não ser que essa segurança seja removida.

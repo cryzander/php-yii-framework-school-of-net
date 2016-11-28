@@ -13,4 +13,13 @@ class Course extends ActiveRecord
 		return 'courses';
 		// Aqui é o nome da tabela a qual esse model se refere.
 	}
+	
+	public function rules()
+	{
+		return [
+				[['name', 'hours'], 'safe']
+			];
+		// Isso faz com que o Yii permita a inserção de dados neste campos
+		// Isso foi explicado no arquivo dicasImportantes.txt
+	}
 }

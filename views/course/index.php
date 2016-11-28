@@ -1,7 +1,11 @@
 <?php
 /* @var $this yii\web\View */
+use yii\helpers\Url;
 ?>
 <h1>Listar dados na Index</h1>
+
+<h3><a href="<?php echo Url::to(['course/create']);  ?>"> Novo Curso</a></h3>
+<!-- Isso serve para criar uma Url para a rota course/create -->
 
 <table class="table">
 	<thead>
