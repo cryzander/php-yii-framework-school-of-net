@@ -1,6 +1,13 @@
  1195  php composer.phar create-project --prefer-dist yiisoft/yii2-app-basic php-yii-framework-school-of-net  // Cria a estrutura do Yii com o Composer e dependências
  1197  cd php-yii-framework-school-of-net/
  1250  php yii serve --port=8888 // Roda um servidor com o yii na porta 8888
+       php yii hello Gustavo // esse comando iniciar o controller index (padrão) e passa o parâmetro "Gustavo"
+ 1215  php yii gii/controller --controllerClass="app\controllers\TesteController"  // Criar um controller usando o gerador de código
+	// Lembrando que o primeiro nome antes de controller é a rota e será convertido para maiúsculo quando for acessado
+	// Logo após, você deverá criar uma action (funcão publica actionIndex, por exemplo) dentro do TesteController
+	// Logo essa rota sera da seguinte forma index.php?r=teste/index ou teste/index com rotas amigáveis
+		-- teste (rota)
+		-- index (action)
  1353  php yii migrate/create create_courses_table --fields="id:primaryKey,name:string:notNull,hours:integer:notNull" // cria uma nova migration para ser migrada no banco
  1359  php yii migrate/new // mostra as migrations (arquivo php) que ainda não foram inseridas
  1360  php yii migrate/history // mostra o histórico de migrações
