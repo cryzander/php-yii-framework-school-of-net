@@ -24,6 +24,9 @@ use yii\helpers\Url;
 			<td>
 				<a href="<?php echo Url::to(['course/update','id' => $course->id]); ?>">
 					Editar
+				</a>/
+				<a href="<?php echo Url::to(['course/delete','id' => $course->id]); ?>">
+					Delelar
 				</a>
 			</td>
 		</tr>

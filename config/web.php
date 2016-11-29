@@ -56,7 +56,8 @@ $config = [
 		//'teste/<id:\d+>/<name>' => 'teste/mais-parametros'
 		// Aqui ele passa dois parâmetros e chama a action
 		// mais-parâmetros.  (id, name)
-		'course/<id:\d+>/update' => 'course/update'
+		'course/<id:\d+>/update' => 'course/update',
+		'course/<id:\d+>/delete' => 'course/delete'
             ],
         ],
         
