@@ -9,3 +9,11 @@ Permissões do inserção de dados
 O Yii precisa que você implemente uma função rules() dentro de Course.php para que seja
 dada uma permissão aos campos que serão inseridos no banco. Sem isso ele não deixa inserir
 a não ser que essa segurança seja removida.
+
+Layouts
+
+Os layouts são criado a partir do arquivo layouts/main.php. Esse arquivo renderiza os layouts padrões
+do Yii além de carregar os assets (frameworks e componentes necessários para uma aplicação funcionar)
+como bootstrap, por exemplo. 
+Abrindo o arquivo main.php, podemos encontrar uma variável chamada $content. Essa variável é o conteúdo do
+página que é renderizada naquele momento. Exemplo: index.php ou editar.php.
