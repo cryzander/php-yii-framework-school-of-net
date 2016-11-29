@@ -13,6 +13,7 @@ use yii\helpers\Url;
 			<td>#</td>
 			<td>Name</td>
 			<td>Hours</td>
+			<td>Action</td>
 	</thead>
 	<tbody>
 		<?php foreach ($courses as $course): ?>
@@ -20,6 +21,11 @@ use yii\helpers\Url;
 			<td><?php echo $course->id; ?></td>
 			<td><?php echo $course->name; ?></td>
 			<td><?php echo $course->hours; ?></td>
+			<td>
+				<a href="<?php echo Url::to(['course/update','id' => $course->id]); ?>">
+					Editar
+				</a>
+			</td>
 		</tr>
 		<?php endforeach; ?>
 	</tbody>

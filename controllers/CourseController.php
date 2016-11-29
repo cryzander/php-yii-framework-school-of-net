@@ -42,9 +42,30 @@ class CourseController extends \yii\web\Controller
 	]);
     }
 
-    public function actionUpdate()
+    public function actionUpdate($id)
     {
-        return $this->render('update');
+        
+	$model = Course::findOne($id);
+	if (!$model)
+	{
+		throw new NotFoundHttpException("Pagina não encontrada");
+	}
+	$request = \Yii::$app->request;
+	// Usa o helper do Yii para pegar a request
+	if ($request->isPost)
+	{
+		// Ele só entrará aqui quando for um Post
+		// Isso quer dizer que entrará na hora que ele for atualizar somente
+		$model->attributes = $request->post();
+		$model->save();
+		return $this->redirect(['course/index']);
+	}
+	
+	// Ele chegará aqui se for um redirecionamento normal
+	// Pois se for um Post ele entrará no IF anterior e irá para a index
+	return $this->render('update', [
+		'model' => $model
+	]);
     }
 
 }
